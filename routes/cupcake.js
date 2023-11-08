@@ -23,8 +23,11 @@ router.post('/', (req, res) => {
     flavor,
     instructions
   }
+  const newCupcake = {...cupcake, instructions: encrypt(instructions)};
+  console.log(newCupcake);
+  cupcakes.push(newCupcake);
 
-  cupcakes.push({...cupcake, instructions: encrypt(instructions)});
+  // cupcakes.push({...cupcake, instructions: encrypt(instructions)});
   res.status(201).json(cupcake)
 })
 

@@ -7,6 +7,12 @@ const key = Buffer.from(process.env.ENCRYPTION_KEY, 'hex')
 
 // we are using the aes encryption algorithm
 const algo = 'aes-256-cbc'
+const text = 'Hello, world!'
+const encrypted = encrypt(text)
+const decrypted = decrypt(encrypted)
+
+console.log(encrypted)
+console.log(decrypted)
 
 function encrypt(plainText) {
   // the Intialization Vector is random data which is mixed into the plainText before encryption
